@@ -1,0 +1,11 @@
+{
+    "id": 2,
+    "title": "The Hobbit",
+    "author": "J. R. R. Tolkien",
+    "condition": "good",
+    "price": 3.5,
+    "quantityInStock": 6,
+    "imagePath": "./assets/the-hobbit",
+    "shortDescription": "The Hobbit is the unforgettable story of Bilbo, a peace-loving hobbit, who embarks on a strange and magical adventure. A timeless classic.",
+    "type": "fiction"
+}
