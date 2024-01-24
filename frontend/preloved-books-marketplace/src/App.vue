@@ -6,17 +6,14 @@ import ProductPage from './components/ProductPage.vue';
 
 <template>
   <header>
-    <div class="wrapper">
-      <nav>
+    <div :class="$style.wrapper">
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/search"></RouterLink>
-      </nav>
-      <ProductPage />
+        <RouterLink to="/search">Search (placeholder)</RouterLink>
+        <RouterLink to="/product/:id">Product (placeholder)</RouterLink>
     </div>
   </header>
 
   <RouterView />
 </template>
 
-<style scoped>
-</style>
+<style module src="./App.css"></style>

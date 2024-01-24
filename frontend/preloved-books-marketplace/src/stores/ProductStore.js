@@ -8,11 +8,9 @@ export const useProductStore = defineStore('productStore', {
     productList: [],
   }),
   getters: {
-
   },
   actions: {
     async fetchProductInfo(id) {
-      console.log('hey')
       const product = mockProduct.find((product) => product.id === id)
       this.productList.push(product)
       return product

@@ -1,17 +1,25 @@
 <template>
     <div :class="$style.wrapper">
-        <img src="../assets/the-hobbit.jpg">
-        <div :class="$style.content">
-            <div :class="$style.header">The Hobbit</div>
-            <div :class="$style.author">by J. R. R. Tolkien</div>
-            <div :class="$style.shortDescription">The Hobbit is the unforgettable story of Bilbo, a peace-loving hobbit, who embarks on a strange and magical adventure. A timeless classic.</div>
-            <div :class="$style.detailsWrapper">
-                <span :class="$style.condition">Condition: Good</span>
-                <span :class="$style.price">Price: 3.50</span>
+        <template v-if="currentProduct">
+            <img src="../assets/the-hobbit.jpg">
+            <div :class="$style.content">
+                <div :class="$style.header">{{ currentProduct.title }}</div>
+                <div :class="$style.author">by {{ currentProduct.author }}</div>
+                <div :class="$style.shortDescription">{{ currentProduct.shortDescription }}</div>
+                <div :class="$style.price">
+                    £{{ currentProduct.price }}
+                </div> 
+                <div :class="$style.detailsWrapper1">
+                    Condition: {{ currentProduct.condition }}
+                </div>
+                <div :class="$style.detailsWrapper2">
+                    <span :class="$style.quantityWrapper">Quantity: <input type="text" :class="$style.quantityWanted"></span>
+                    <span :class="$style.addToCartWrapper"><button :class="$style.addToCart" @click="testPinia">Add to cart</button></span>
+                </div>
+                <div :class="$style.stock">Only {{ currentProduct.quantityInStock }} books left in stock</div>
             </div>
-            <div :class="$style.stock">Only 6 books left in stock</div>
-            <button :class="$style.addToCart" @click="testPinia">Add to cart</button>
-        </div>
+        </template>
+
     </div>
 </template>
 
@@ -23,7 +31,7 @@ export default {
     name: 'ProductPage',
     data() {
         return {
-            currentProduct: '',
+            currentProduct: null,
         }
     },
     computed: {
@@ -31,21 +39,26 @@ export default {
         ...mapState(useProductStore, [
             'productList',
         ]),
+        imagePath() {
+            return this.currentProduct?.imagePath
+        },
+        type() {
+            return this.currentProduct?.type
+        }
     },
     mounted() {
-        // const id = this.$route.params.id     this is returning undefined
+        // const id = this.$route.params.id
+        // console.log(id)
         this.fetchProductInfo(2).then((fetchedProduct) => {
             this.currentProduct = fetchedProduct
-            console.log(this.currentProduct)
+            // console.log(fetchedProduct)
+            // console.log(this.currentProduct)
         })
     },
     methods: {
         ...mapActions(useProductStore, [
             'fetchProductInfo'
         ]),
-        testPinia() {
-            console.log(this.fetchProductInfo(2))
-        },
     },
 }
 </script>
