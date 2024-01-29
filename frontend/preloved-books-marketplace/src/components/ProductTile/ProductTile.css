@@ -1,0 +1,55 @@
+* {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    color: #167e58;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.author {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: grey;
+    margin-bottom: 4px;
+}
+
+.condition {
+    color: rgb(75, 75, 75);
+    font-size: 0.85em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #167e58;
+    margin-bottom: 3px;
+}
+
+.addToCart {
+    padding: 5px 25px;
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    background: #FDDA0D;
+    color: #1F75FE;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2.5px 2.5px 2.5px #000;
+}
+
+.addToCart:hover {
+    cursor: pointer;
+    background: #fecb00;
+}

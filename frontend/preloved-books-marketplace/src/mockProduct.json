@@ -3,9 +3,21 @@
     "title": "The Hobbit",
     "author": "J. R. R. Tolkien",
     "shortDescription": "The Hobbit is the unforgettable story of Bilbo, a peace-loving hobbit, who embarks on a strange and magical adventure. A timeless classic.",
-    "condition": "Good",
+    "condition": "Very Good",
     "price": 3.5,
     "quantityInStock": 6,
-    "imagePath": "../assets/the-hobbit.jpg",
+    "imagePath": "@/assets/the-hobbit.jpg",
     "type": "fiction"
-}]
+},
+{
+    "id": 3,
+    "title": "A Tale of Two Cities",
+    "author": "Charles Dickens",
+    "shortDescription": "After eighteen years as a political prisoner in the Bastille, the ageing Doctor Manette is finally released and reunited with his daughter in England. There the lives of two very different men, Charles Darnay, an exiled French aristocrat, and Sydney Carton, a disreputable but brilliant English lawyer, become enmeshed through their love for Lucie Manette. From the tranquil roads of London, they are drawn against their will to the vengeful, bloodstained streets of Paris at the height of the Reign of Terror, and they soon fall under the lethal shadow of La Guillotine.",
+    "condition": "Well Read",
+    "price": 2.5,
+    "quantityInStock": 2,
+    "imagePath": "@/assets/a-tale-of-two-cities.jpg",
+    "type": "fiction"
+}
+]

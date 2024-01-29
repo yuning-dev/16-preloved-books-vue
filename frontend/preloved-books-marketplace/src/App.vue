@@ -1,7 +1,8 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 
-import ProductPage from './components/ProductPage.vue'; 
+import ProductPage from './components/ProductPage/ProductPage.vue'; 
+import ProductTile from './components/ProductTile/ProductTile.vue'
 </script>
 
 <template>
@@ -12,7 +13,6 @@ import ProductPage from './components/ProductPage.vue';
         <RouterLink to="/product/:id">Product (placeholder)</RouterLink>
     </div>
   </header>
-
   <RouterView />
 </template>
 

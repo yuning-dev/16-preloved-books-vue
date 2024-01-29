@@ -28,35 +28,21 @@
 
 .price {
     margin: 7.5px 20px;
-    font-size: 1.2em;
+    font-size: 1.3em;
+    color: #167e58;
 }
 
-.detailsWrapper1 {
+.conditionWrapper {
     padding: 7.5px 20px;
-    width: 50%;
-    border: 1px solid rgb(194, 194, 194);
 }
 
-.detailsWrapper2 {
+.addToCartWrapper {
     padding: 7.5px 20px;
-    width: 50%;
-    border: 1px solid rgb(194, 194, 194);
-    margin-top: none;
-}
-
-.quantityWrapper {
-    margin-right: 50px;
-}
-
-.quantityWanted {
-    width: 10%;
-    height: 15px;
-    margin-left: 5px;
-    text-align: center;
+    margin-top: 30px;
 }
 
 .addToCart {
-    padding: 5px 10px;
+    padding: 5px 25px;
     font-size: 1.1em;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
