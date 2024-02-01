@@ -5,15 +5,17 @@ import mockProduct from '../mockProduct.json'
 
 export const useProductStore = defineStore('productStore', {
   state: () => ({
-    productList: [],
+    recommendedProducts: [],
+    activeProduct: null,
   }),
   getters: {
   },
   actions: {
+    async fetchRecommendedProducts() {
+      this.recommendedProducts = mockProduct.slice(0, 3)
+    },
     async fetchProductInfo(id) {
-      const product = mockProduct.find((product) => product.id === id)
-      this.productList.push(product)
-      return product
+      this.activeProduct = mockProduct.find((product) => product.id === id)
     },
   }
 })

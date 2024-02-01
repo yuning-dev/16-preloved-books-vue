@@ -1,19 +1,19 @@
 <template>
     <div :class="$style.wrapper">
-        <template v-if="currentProduct">
-            <img :src="imagePath">
+        <template v-if="activeProduct">
+            <img src="@/assets/a-tale-of-two-cities.jpg" width="300">
             <div :class="$style.content">
-                <div :class="$style.header">{{ currentProduct.title }}</div>
-                <div :class="$style.author">by {{ currentProduct.author }}</div>
-                <div :class="$style.shortDescription">{{ currentProduct.shortDescription }}</div>
+                <div :class="$style.header">{{ activeProduct.title }}</div>
+                <div :class="$style.author">by {{ activeProduct.author }}</div>
+                <div :class="$style.shortDescription">{{ activeProduct.shortDescription }}</div>
                 <div :class="$style.price">
-                    £{{ currentProduct.price }}
+                    £{{ activeProduct.price }}
                 </div> 
                 <div :class="$style.conditionWrapper">
-                    Condition: {{ currentProduct.condition }}
+                    Condition: {{ activeProduct.condition }}
                 </div>
                 <div :class="$style.addToCartWrapper"><button :class="$style.addToCart" @click="testPinia">Add to cart</button></div>
-                <div :class="$style.stock">Only {{ currentProduct.quantityInStock }} books left in stock</div>
+                <div :class="$style.stock">Only {{ activeProduct.quantityInStock }} books left in stock</div>
             </div>
         </template>
 
@@ -26,33 +26,23 @@ import { useProductStore } from '@/stores/ProductStore';
 
 export default {
     name: 'ProductPage',
-    data() {
-        return {
-            currentProduct: null,
-        }
-    },
     computed: {
         ...mapStores(useProductStore),
         ...mapState(useProductStore, [
-            'productList',
-        ]),
-        imagePath() {
-            const path = this.currentProduct?.imagePath
-            console.log(path)
-            return path
-        },
-        type() {
-            return this.currentProduct?.type
-        }
+            'activeProduct'
+        ])
+        // imagePath() {
+        //     const path = this.activeProduct?.imagePath
+        //     console.log(path)
+        //     return path
+        // },
+        // type() {
+        //     return this.activeProduct?.type
+        // }
     },
     mounted() {
-        // const id = this.$route.params.id
-        // console.log(id)
-        this.fetchProductInfo(3).then((fetchedProduct) => {
-            this.currentProduct = fetchedProduct
-            // console.log(fetchedProduct)
-            // console.log(this.currentProduct)
-        })
+        const id = this.$route.params.id
+        this.fetchProductInfo(Number(id))
     },
     methods: {
         ...mapActions(useProductStore, [

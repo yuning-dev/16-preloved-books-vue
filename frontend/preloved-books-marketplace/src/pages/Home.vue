@@ -1,7 +1,9 @@
 <template>
-    <template v-for="product in currentProductList">
-        <ProductTile :product="product"/>
-    </template>
+    <div :class="$style.wrapper">
+        <template v-for="product in recommendedProducts">
+            <ProductTile :product="product"/>
+        </template>
+    </div>
 </template>
 
 <script>
@@ -14,29 +16,17 @@ export default {
     components: {
         ProductTile
     },
-    data() {
-        return {
-            currentProductList: [],
-            currentProduct: null,
-        }
-    },
     mounted() {
-        this.fetchProductInfo(2).then((fetchedProduct) => {
-            this.currentProduct = fetchedProduct
-            // console.log(fetchedProduct)
-            // console.log(this.currentProduct)
-        })
-        console.log(this.productList)
-        this.currentProductList = this.productList
+        this.fetchRecommendedProducts()
     },
     computed: {
         ...mapState(useProductStore, [
-            'productList'
+            'recommendedProducts'
         ])
     },
     methods: {
         ...mapActions(useProductStore, [
-            'fetchProductInfo'
+            'fetchRecommendedProducts'
         ])
     }
 }

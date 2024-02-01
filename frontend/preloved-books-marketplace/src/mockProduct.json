@@ -19,5 +19,16 @@
     "quantityInStock": 2,
     "imagePath": "@/assets/a-tale-of-two-cities.jpg",
     "type": "fiction"
+},
+{
+    "id": 4,
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "shortDescription": "Pride and Prejudice, which opens with one of the most famous sentences in English Literature, is an ironic novel of manners. In it the garrulous and empty-headed Mrs Bennet has only one aim - that of finding a good match for each of her five daughters. In this she is mocked by her cynical and indolent husband. With its wit, its social precision and, above all, its irresistible heroine, Pride and Prejudice has proved one of the most enduringly popular novels in the English language.",
+    "condition": "Like New",
+    "price": 4,
+    "quantityInStock": 1,
+    "imagePath": "@/assets/pride-and-prejudice.jpg",
+    "type": "fiction"
 }
 ]
