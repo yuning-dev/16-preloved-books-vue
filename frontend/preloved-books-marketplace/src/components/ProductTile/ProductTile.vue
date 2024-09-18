@@ -1,6 +1,6 @@
 <template>
     <div :class="$style.wrapper">
-        <img src="@/assets/the-hobbit.jpg" width="150">
+        <img :src="postBuildURL(product)" width="150">
         <div :class="$style.title"> {{ product.title }}</div>
         <div :class="$style.author">by {{ product.author }}</div>
         <div :class="$style.condition">{{ product.condition }}</div>
@@ -22,8 +22,14 @@ export default {
     },
     mounted() {
         console.log(this.product.imagePath)
+        console.log(this.postBuildURL)
         return this.product?.imagePath       
     },
+    methods: {
+        postBuildURL (product) {
+            return new URL(`../../assets/${product.image}`, import.meta.url).href
+        }
+    }
 }
 </script>
 

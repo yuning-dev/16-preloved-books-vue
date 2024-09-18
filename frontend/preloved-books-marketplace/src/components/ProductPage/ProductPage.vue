@@ -1,7 +1,7 @@
 <template>
     <div :class="$style.wrapper">
         <template v-if="activeProduct">
-            <img src="@/assets/a-tale-of-two-cities.jpg" width="300">
+            <img src="@/assets/pride-and-prejudice.jpg" width="300">
             <div :class="$style.content">
                 <div :class="$style.header">{{ activeProduct.title }}</div>
                 <div :class="$style.author">by {{ activeProduct.author }}</div>

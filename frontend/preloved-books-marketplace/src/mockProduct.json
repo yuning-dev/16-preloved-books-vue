@@ -6,6 +6,7 @@
     "condition": "Very Good",
     "price": 3.5,
     "quantityInStock": 6,
+    "image": "the-hobbit.jpg",
     "imagePath": "@/assets/the-hobbit.jpg",
     "type": "fiction"
 },
@@ -17,6 +18,7 @@
     "condition": "Well Read",
     "price": 2.5,
     "quantityInStock": 2,
+    "image": "a-tale-of-two-cities.jpg",
     "imagePath": "@/assets/a-tale-of-two-cities.jpg",
     "type": "fiction"
 },
@@ -28,6 +30,7 @@
     "condition": "Like New",
     "price": 4,
     "quantityInStock": 1,
+    "image": "pride-and-prejudice.jpg",
     "imagePath": "@/assets/pride-and-prejudice.jpg",
     "type": "fiction"
 }

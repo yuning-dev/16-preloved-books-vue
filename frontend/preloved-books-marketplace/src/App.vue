@@ -7,6 +7,9 @@ import ProductTile from './components/ProductTile/ProductTile.vue'
 
 <template>
   <header>
+    <div :class="$style.imgWrapper">
+      <img src="@/assets/books.jpg" class="$style.homeBanner">
+    </div>
     <div :class="$style.wrapper">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/search">Search (placeholder)</RouterLink>

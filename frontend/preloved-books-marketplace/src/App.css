@@ -1,4 +1,15 @@
-.wrapper {
+.imgWrapper {
     display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
     gap: 15px;
+}
+
+.homeBanner {
+    width: 60%
 }
