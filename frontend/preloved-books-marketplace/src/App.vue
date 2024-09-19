@@ -13,7 +13,6 @@ import ProductTile from './components/ProductTile/ProductTile.vue'
     <div :class="$style.wrapper">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/search">Search (placeholder)</RouterLink>
-        <RouterLink to="/product/:id">Product (placeholder)</RouterLink>
     </div>
   </header>
   <RouterView />

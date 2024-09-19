@@ -1,7 +1,7 @@
 <template>
     <div :class="$style.wrapper">
         <template v-if="activeProduct">
-            <img src="@/assets/pride-and-prejudice.jpg" width="300">
+            <img :src="postBuildURL" width="300">
             <div :class="$style.content">
                 <div :class="$style.header">{{ activeProduct.title }}</div>
                 <div :class="$style.author">by {{ activeProduct.author }}</div>
@@ -30,7 +30,10 @@ export default {
         ...mapStores(useProductStore),
         ...mapState(useProductStore, [
             'activeProduct'
-        ])
+        ]),
+        postBuildURL() {
+            return new URL(`../../assets/${this.activeProduct.image}`, import.meta.url).href
+        }
         // imagePath() {
         //     const path = this.activeProduct?.imagePath
         //     console.log(path)

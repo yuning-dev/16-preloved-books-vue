@@ -15,6 +15,14 @@
     font-weight: bold;
 }
 
+.bookImage:hover, .title:hover {
+    cursor: pointer
+}
+
+.title:hover {
+    color: #57a589
+}
+
 .author {
     font-size: 0.9em;
     font-weight: bold;
