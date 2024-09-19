@@ -1,22 +1,23 @@
 <template>
     <div :class="$style.wrapper">
-        <template v-if="activeProduct">
-            <img :src="postBuildURL" width="300">
-            <div :class="$style.content">
-                <div :class="$style.header">{{ activeProduct.title }}</div>
-                <div :class="$style.author">by {{ activeProduct.author }}</div>
-                <div :class="$style.shortDescription">{{ activeProduct.shortDescription }}</div>
-                <div :class="$style.price">
-                    £{{ activeProduct.price }}
-                </div> 
-                <div :class="$style.conditionWrapper">
-                    Condition: {{ activeProduct.condition }}
+        <div :class="$style.innerWrapper">
+            <template v-if="activeProduct">
+                <img :src="postBuildURL" :class="$style.bookImage">
+                <div :class="$style.content">
+                    <div :class="$style.header">{{ activeProduct.title }}</div>
+                    <div :class="$style.author">by {{ activeProduct.author }}</div>
+                    <div :class="$style.shortDescription">{{ activeProduct.shortDescription }}</div>
+                    <div :class="$style.price">
+                        £{{ activeProduct.price }}
+                    </div> 
+                    <div :class="$style.conditionWrapper">
+                        Condition: {{ activeProduct.condition }}
+                    </div>
+                    <div :class="$style.addToCartWrapper"><button :class="$style.addToCart" @click="testPinia">Add to cart</button></div>
+                    <div :class="$style.stock">Only {{ activeProduct.quantityInStock }} books left in stock</div>
                 </div>
-                <div :class="$style.addToCartWrapper"><button :class="$style.addToCart" @click="testPinia">Add to cart</button></div>
-                <div :class="$style.stock">Only {{ activeProduct.quantityInStock }} books left in stock</div>
-            </div>
-        </template>
-
+            </template>
+        </div>
     </div>
 </template>
 

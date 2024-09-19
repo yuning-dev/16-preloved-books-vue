@@ -5,7 +5,8 @@
 
 .homeBanner {
     width: 75%;
-    height: auto
+    max-width: 1250px;
+    height: auto;
 }
 
 .wrapper {
