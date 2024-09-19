@@ -1,4 +1,7 @@
 <template>
+    <div :class="$style.titleWrapper">
+        <div :class="$style.title">Some of our all-time favourites:</div>
+    </div>
     <div :class="$style.wrapper">
         <template v-for="product in recommendedProducts">
             <ProductTile :product="product"/>

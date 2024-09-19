@@ -3,6 +3,11 @@
     justify-content: center;
 }
 
+.homeBanner {
+    width: 75%;
+    height: auto
+}
+
 .wrapper {
     margin-top: 10px;
     display: flex;
@@ -10,6 +15,3 @@
     gap: 15px;
 }
 
-.homeBanner {
-    width: 60%
-}

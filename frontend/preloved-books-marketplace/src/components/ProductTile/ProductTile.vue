@@ -1,6 +1,6 @@
 <template>
     <div :class="$style.wrapper">
-        <img :src="postBuildURL" width="150">
+        <img :src="postBuildURL" height="270">
         <div :class="$style.title"> {{ product.title }}</div>
         <div :class="$style.author">by {{ product.author }}</div>
         <div :class="$style.condition">{{ product.condition }}</div>

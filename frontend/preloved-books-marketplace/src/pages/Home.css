@@ -1,7 +1,19 @@
+.titleWrapper {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    width: 75%;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
 .wrapper {
     display: flex;
     justify-content: space-around;
     width: 75%;
     max-width: 1200px;
-    margin: 50px auto 0 auto;
+    margin: 25px auto 0 auto;
 }
