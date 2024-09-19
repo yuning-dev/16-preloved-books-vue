@@ -4,7 +4,7 @@
     </div>
     <div :class="$style.wrapper">
         <template v-for="product in recommendedProducts">
-            <ProductTile :product="product"/>
+            <ProductTile :product="product" @routeToProduct="openProductPage"/>
         </template>
     </div>
 </template>
@@ -30,7 +30,10 @@ export default {
     methods: {
         ...mapActions(useProductStore, [
             'fetchRecommendedProducts'
-        ])
+        ]),
+        openProductPage(id) {
+            this.$router.push({ path: `/product/${id}` })
+        },
     }
 }
 
