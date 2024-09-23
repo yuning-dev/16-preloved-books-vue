@@ -33,5 +33,29 @@
     "image": "pride-and-prejudice.jpg",
     "imagePath": "@/assets/pride-and-prejudice.jpg",
     "type": "fiction"
+},
+{
+    "id": 3,
+    "title": "Sapiens",
+    "author": "Yuval Noah Harari",
+    "shortDescription": "What makes us brilliant? What makes us deadly? What makes us Sapiens? One of the world's preeminent historians and thinkers, Yuval Noah Harari challenges everything we know about being human. Earth is 4.5 billion years old. In just a fraction of that time, one species among countless others has conquered it: us. In this bold and provocative book, Yuval Noah Harari explores who we are, how we got here and where we're going.",
+    "condition": "Good",
+    "price": 4,
+    "quantityInStock": 3,
+    "image": "sapiens.jpg",
+    "imagePath": "@/assets/sapiens.jpg",
+    "type": "non-fiction"
+},
+{
+    "id": 4,
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "shortDescription": "In this ground-breaking book, Clears reveals exactly how these minuscule changes can grow into such life-altering outcomes. He uncovers a handful of simple life hacks (the forgotten art of Habit Stacking, the unexpected power of the Two Minute Rule, or the trick to entering the Goldilocks Zone), and delves into cutting-edge psychology and neuroscience to explain why they matter. Along the way, he tells inspiring stories of Olympic gold medalists, leading CEOs, and distinguished scientists who have used the science of tiny habits to stay productive, motivated, and happy.",
+    "condition": "Very Good",
+    "price": 4.5,
+    "quantityInStock": 3,
+    "image": "atomic-habits.jpg",
+    "imagePath": "@/assets/atomic-habits.jpg",
+    "type": "non-fiction"
 }
 ]

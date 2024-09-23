@@ -20,11 +20,6 @@ export default {
             currentImagePath: this.imagePath
         }
     },
-    mounted() {
-        console.log(this.product.imagePath)
-        console.log(this.postBuildURL)
-        return this.product?.imagePath       
-    },
     computed: {
         postBuildURL() {
             return new URL(`../../assets/${this.product.image}`, import.meta.url).href

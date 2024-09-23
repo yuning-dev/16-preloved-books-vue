@@ -1,8 +1,11 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 
+import SearchBar from './components/SearchBar/SearchBar.vue'
+
 import ProductPage from './components/ProductPage/ProductPage.vue'; 
 import ProductTile from './components/ProductTile/ProductTile.vue'
+
 </script>
 
 <template>
@@ -12,6 +15,7 @@ import ProductTile from './components/ProductTile/ProductTile.vue'
     </div>
     <div :class="$style.wrapper">
         <RouterLink to="/">Home</RouterLink>
+        <SearchBar />
         <RouterLink to="/search">Search (placeholder)</RouterLink>
     </div>
   </header>

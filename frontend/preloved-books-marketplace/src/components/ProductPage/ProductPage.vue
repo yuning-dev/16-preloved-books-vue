@@ -35,14 +35,6 @@ export default {
         postBuildURL() {
             return new URL(`../../assets/${this.activeProduct.image}`, import.meta.url).href
         }
-        // imagePath() {
-        //     const path = this.activeProduct?.imagePath
-        //     console.log(path)
-        //     return path
-        // },
-        // type() {
-        //     return this.activeProduct?.type
-        // }
     },
     mounted() {
         const id = this.$route.params.id
