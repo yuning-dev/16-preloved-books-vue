@@ -1,3 +1,9 @@
+.searchBar {
+    width: 300px;
+    height: 20px;
+    font-size: 1em;
+}
+
 .searchBtn {
     background: #008E97;
     color: white;

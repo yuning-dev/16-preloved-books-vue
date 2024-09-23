@@ -57,5 +57,17 @@
     "image": "atomic-habits.jpg",
     "imagePath": "@/assets/atomic-habits.jpg",
     "type": "non-fiction"
+},
+{
+    "id": 5,
+    "title": "The Old Man and The Sea",
+    "author": "Esnest Hemingway",
+    "shortDescription": "Set in the Gulf Stream off the coast of Havana, Hemingway's magnificent fable is the story of an old man, a young boy and a giant fish. Here, in a perfectly crafted story, is a unique and timeless vision of the beauty and grief of man's challenge to the elements in which he lives. Not a single word is superfluous in this widely admired masterpiece, which once and for all established his place as one of the giants of modern literature.",
+    "condition": "Good",
+    "price": 3,
+    "quantityInStock": 2,
+    "image": "the-old-man-and-the-sea.jpg",
+    "imagePath": "@/assets/the-old-man-and-the-sea.jpg",
+    "type": "fiction"
 }
 ]
