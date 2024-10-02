@@ -8,6 +8,7 @@ export const useProductStore = defineStore('productStore', {
     recommendedProducts: [],
     allProducts: [],
     activeProduct: null,
+    searchResults: []
   }),
   getters: {
   },
@@ -21,5 +22,28 @@ export const useProductStore = defineStore('productStore', {
     async fetchProductInfo(id) {
       this.activeProduct = mockProduct.find((product) => product.id === id)
     },
+    // searchAlgorithm(input) {
+    //     console.log(this.allProducts)
+    //     const searchWords = input.toLowerCase().split(' ')
+    //     let titleWordLists = this.allProducts.map((product) => product.title.toLowerCase().split(' '))
+
+    //     console.log(titleWordLists)
+
+    //     let productCopies = []
+
+    //     titleWordLists.forEach((titleWordList, i) => {
+    //         let score = 0
+    //         titleWordList.forEach(titleWord => {
+    //             if (searchWords.find(titleWord)) {
+    //                 score++
+    //             }
+    //         })
+    //         const copy = {
+    //             ...this.allProducts[i],
+    //             score
+    //         }
+    //         productCopies.push(copy)
+    //     })
+    // }
   }
 })

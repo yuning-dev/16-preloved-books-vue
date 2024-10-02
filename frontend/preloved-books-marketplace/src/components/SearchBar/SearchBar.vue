@@ -1,6 +1,6 @@
 <template>
     <input :class="$style.searchBar" type="text" v-model="input" placeholder="Search books..."/>
-    <button :class="$style.searchBtn" @click="searchAlgorithm">Search!</button>
+    <button :class="$style.searchBtn" @click="searchAlgorithm(this.input)">Search!</button>
 </template>
 
 <script>
@@ -19,69 +19,35 @@ export default {
     },
     computed: {
         ...mapStores(useProductStore),
-        ...mapState(useProductStore, ['allProducts'])
+        ...mapState(useProductStore, ['allProducts', 'searchResults'])
     },
     methods: {
         ...mapActions(useProductStore, ['fetchAllProducts']),
-        // TODO - extract into an action
-        // TODO - write tests for that action
-        // TODO - extension 1 - give half scores for partial matches
-        // TODO - extension 2 - use levenshtein distance and tune it to figure out the score
         searchAlgorithm() {
             console.log(this.allProducts)
-            const lcInput = this.input.toLowerCase()
-            const splitInput = lcInput.split(' ')
-            let splitTitles = [] //this.allProducts.map((product) => product.title.toLowerCase().split(' '))
+            const searchWords = this.input.toLowerCase().split(' ')
+            let titleWordLists = this.allProducts.map((product) => product.title.toLowerCase().split(' '))
 
-            for (let i = 0; i < this.allProducts.length; i++) {
-                const title = this.allProducts[i].title
-                splitTitles.push(title.toLowerCase().split(' '))
-            }
+            console.log(titleWordLists)
 
-            console.log(splitTitles)
+            let productCopies = []
 
-            let score = [] // TODO rename to scores
-
-            // TODO - easier to reason about if split into functions
-            for (let i = 0; i < splitTitles.length; i++) {
-                let titleScore = 0
-                for (let j = 0; j < splitTitles[i].length; j++) {
-                    for (let k = 0; k < splitInput.length; k++) {
-                        if (splitTitles[i][j] === splitInput[k]) {
-                            console.log(splitTitles[i][j])
-                            titleScore++
-                        }
+            titleWordLists.forEach((titleWordList, i) => {
+                let score = 0
+                titleWordList.forEach(titleWord => {
+                    if (searchWords.find(searchWord => searchWord === titleWord)) {
+                        score++
                     }
+                })
+                const copy = {
+                    ...this.allProducts[i],
+                    score
                 }
-                score.push(titleScore)
-                titleScore = 0 // not necessary
-            }
-
-            // Iterates through lists of words
-            // for lett ....
-                // Iterates through words from an individual title
-                // for let ...
-                    // Iterates through words from 
-            
-
-            console.log(splitTitles[5][0] === splitInput[0])
-            console.log(splitTitles[5][4] === splitInput[0])
-
-            console.log(score)
-
-            const copyProducts = [] // TODO - rename to productCopies
-            // TODO - don't need this extra loop, can just add the objects to an array of
-            // objects as you go, instead of adding all the scores to an array and then
-            // generating another array
-            for (let i = 0; i < this.allProducts.length; i++) {
-                const copy = { 
-                   ...this.allProducts[i],
-                   score: score[i]
+                if (copy.score > 0) {
+                    this.searchResults.push(copy)
                 }
-                copyProducts.push(copy)
-            }
-
-            console.log(copyProducts)
+                productCopies.push(copy)
+            })
         }
     }
 }
