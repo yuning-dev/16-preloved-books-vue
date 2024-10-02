@@ -14,7 +14,7 @@ export const useProductStore = defineStore('productStore', {
   },
   actions: {
     async fetchRecommendedProducts() {
-      this.recommendedProducts = mockProduct.slice(0, 4)
+      this.recommendedProducts = mockProduct.slice(0, 6)
     },
     async fetchAllProducts() {
       this.allProducts = mockProduct.slice(0, mockProduct.length)

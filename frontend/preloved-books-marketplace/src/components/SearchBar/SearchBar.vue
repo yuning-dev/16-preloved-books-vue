@@ -25,32 +25,34 @@ export default {
     methods: {
         ...mapActions(useProductStore, ['fetchAllProducts']),
         searchAlgorithm() {
-            this.searchResults = []
-            const searchWords = this.input.toLowerCase().split(' ')
-            let titleWordLists = this.allProducts.map((product) => product.title.toLowerCase().split(' '))
+            if (this.input !== '') {
+                this.searchResults = []
+                const searchWords = this.input.toLowerCase().split(' ')
+                let titleWordLists = this.allProducts.map((product) => product.title.toLowerCase().split(' '))
 
-            let productCopies = []
+                let productCopies = []
 
-            titleWordLists.forEach((titleWordList, i) => {
-                let score = 0
-                titleWordList.forEach(titleWord => {
-                    if (searchWords.find(searchWord => searchWord === titleWord)) {
-                        score++
+                titleWordLists.forEach((titleWordList, i) => {
+                    let score = 0
+                    titleWordList.forEach(titleWord => {
+                        if (searchWords.find(searchWord => searchWord === titleWord)) {
+                            score++
+                        }
+                    })
+                    const copy = {
+                        ...this.allProducts[i],
+                        score
                     }
+                    if (copy.score > 0) {
+                        this.searchResults.push(copy)
+                    }
+                    console.log(this.searchResults)
+                    productCopies.push(copy)
                 })
-                const copy = {
-                    ...this.allProducts[i],
-                    score
-                }
-                if (copy.score > 0) {
-                    this.searchResults.push(copy)
-                }
+                this.$router.push({ name: 'search' })
                 console.log(this.searchResults)
-                productCopies.push(copy)
-            })
-            this.$router.push({ name: 'search' })
-            console.log(this.searchResults)
-        },
+            }
+        },        
     }
 }
 </script>

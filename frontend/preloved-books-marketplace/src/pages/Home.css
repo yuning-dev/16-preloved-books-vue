@@ -17,4 +17,5 @@
     width: 75%;
     max-width: 1250px;
     margin: 25px auto 0 auto;
+    flex-wrap: wrap
 }
