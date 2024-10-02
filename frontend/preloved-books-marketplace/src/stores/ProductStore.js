@@ -8,7 +8,7 @@ export const useProductStore = defineStore('productStore', {
     recommendedProducts: [],
     allProducts: [],
     activeProduct: null,
-    searchResults: []
+    searchResults: [],
   }),
   getters: {
   },
@@ -23,18 +23,16 @@ export const useProductStore = defineStore('productStore', {
       this.activeProduct = mockProduct.find((product) => product.id === id)
     },
     // searchAlgorithm(input) {
-    //     console.log(this.allProducts)
-    //     const searchWords = input.toLowerCase().split(' ')
+    //     this.searchResults = []
+    //     const searchWords = this.input.toLowerCase().split(' ')
     //     let titleWordLists = this.allProducts.map((product) => product.title.toLowerCase().split(' '))
-
-    //     console.log(titleWordLists)
 
     //     let productCopies = []
 
     //     titleWordLists.forEach((titleWordList, i) => {
     //         let score = 0
     //         titleWordList.forEach(titleWord => {
-    //             if (searchWords.find(titleWord)) {
+    //             if (searchWords.find(searchWord => searchWord === titleWord)) {
     //                 score++
     //             }
     //         })
@@ -42,8 +40,14 @@ export const useProductStore = defineStore('productStore', {
     //             ...this.allProducts[i],
     //             score
     //         }
+    //         if (copy.score > 0) {
+    //             this.searchResults.push(copy)
+    //         }
+    //         console.log(this.searchResults)
     //         productCopies.push(copy)
     //     })
+    //     this.$router.push({ name: 'search' })
+    //     console.log(this.searchResults)
     // }
   }
 })

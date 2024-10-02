@@ -16,7 +16,6 @@ import ProductTile from './components/ProductTile/ProductTile.vue'
     <div :class="$style.wrapper">
         <RouterLink to="/">Home</RouterLink>
         <SearchBar />
-        <RouterLink to="/search">Search (placeholder)</RouterLink>
     </div>
   </header>
   <RouterView />

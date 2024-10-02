@@ -1,11 +1,11 @@
 <template>
-    <input :class="$style.searchBar" type="text" v-model="input" placeholder="Search books..."/>
-    <button :class="$style.searchBtn" @click="searchAlgorithm(this.input)">Search!</button>
+    <input :class="$style.searchBar" type="text" v-model="input" placeholder="Search books..." @keyup.enter="searchAlgorithm"/>
+    <button :class="$style.searchBtn" @click="searchAlgorithm">Search!</button>
 </template>
 
 <script>
 import { useProductStore } from '@/stores/ProductStore';
-import { mapState, mapActions, mapStores } from 'pinia';
+import { mapState, mapActions, mapStores, mapWritableState } from 'pinia';
 
 export default {
     name: 'SearchBar',
@@ -19,16 +19,15 @@ export default {
     },
     computed: {
         ...mapStores(useProductStore),
-        ...mapState(useProductStore, ['allProducts', 'searchResults'])
+        ...mapState(useProductStore, ['allProducts']),
+        ...mapWritableState(useProductStore, ['searchResults'])
     },
     methods: {
         ...mapActions(useProductStore, ['fetchAllProducts']),
         searchAlgorithm() {
-            console.log(this.allProducts)
+            this.searchResults = []
             const searchWords = this.input.toLowerCase().split(' ')
             let titleWordLists = this.allProducts.map((product) => product.title.toLowerCase().split(' '))
-
-            console.log(titleWordLists)
 
             let productCopies = []
 
@@ -50,12 +49,8 @@ export default {
                 productCopies.push(copy)
             })
             this.$router.push({ name: 'search' })
+            console.log(this.searchResults)
         },
-        // updateSearchResults(productCopies) {
-        //     productCopies.forEach(copy => {
-        //         if (copy.score)
-        //     })
-        // }
     }
 }
 </script>
