@@ -46,9 +46,16 @@ export default {
                 if (copy.score > 0) {
                     this.searchResults.push(copy)
                 }
+                console.log(this.searchResults)
                 productCopies.push(copy)
             })
-        }
+            this.$router.push({ name: 'search' })
+        },
+        // updateSearchResults(productCopies) {
+        //     productCopies.forEach(copy => {
+        //         if (copy.score)
+        //     })
+        // }
     }
 }
 </script>
